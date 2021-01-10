@@ -2,18 +2,36 @@
 {% extends "./homebase.html" %}
 {%load static%}
 
-{%block body%}    <!-- This example requires Tailwind CSS v2.0+ -->
+{%block body%} 
+
+
+
+<!-- This example requires Tailwind CSS v2.0+ -->
 <div class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
         <!-- <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <polygon points="50,0 100,0 50,100 0,100" />
         </svg> -->
-  
+  <!-- search forms -->
+        <div class="p-4 -mb-20">
+          <div class="bg-white flex items-center rounded-full shadow-xl">
+            <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search">
+            
+            <div class="p-4">
+              <button class="bg-indigo-600 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                Q
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  <!-- end search forms -->
          
-        <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <main class="mt-6 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-5 lg:px-8 xl:mt-8">
           <div class="sm:text-center lg:text-left">
-            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl pt-16">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl pt-6 z-10">
               <span class="block xl:inline">Pareto.Dev</span><br>
               <span class="block text-indigo-600 xl:inline">Learn with Us</span>
             </h1>
@@ -41,38 +59,166 @@
     </div>
   </div>
 <!-- section 2 -->
+<br>
+<br>
     <div>
-        <h1 class="text-4xl tracking-tight text-gray-900 sm:text-5xl md:text-3xl text-center" style="margin-top:10px;">
+        <!-- <h1 class="text-4xl tracking-tight text-gray-900 sm:text-5xl md:text-3xl text-center pr-20" style="margin-top:20px;">
           <span class="block xl:inline text-indigo-600">LEARN WITH US</span><br>
           <span class="block xl:inline md:text-6xl font-extrabold">Our Courses</span>
-        </h1>
+        </h1> -->
     </div>
  <!-- component -->
 <!-- This is an example component -->
-        <div class="bg-white-200 flex justify-between items-center py-20 px-20">
-          <div class="mr-5 text-left">
-              <img src="https://images.unsplash.com/photo-1555725305-0406b7607be0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" class="w-full mr-2 rounded">
-            
-              <p class="py-3 px-2  bg-indigo-600 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
-          </div>
-          <div class="mr-5 text-left">
-              <img src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" class="w-full mr-2">
-              <p class="py-3 px-2  bg-indigo-600 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
-          </div>
-          <div class="mr-5 text-left">
-              <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" class="w-full mr-2 rounded">
-              <p class="py-3 px-2  bg-indigo-600 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
-          </div>
-          <div class="mr-5 text-left">
-              <img src="https://images.unsplash.com/photo-1555725305-0406b7607be0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" class="w-full mr-2 ">
-              <p class="py-3 px-2  bg-indigo-600 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
-          </div>
-        </div>
-          
+<!-- <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> -->
+
+<div>
+  <h1 class="text-4xl tracking-tight text-gray-900 sm:text-5xl md:text-3xl text-center" style="margin-top:300px;">
+    
+    <span class="block xl:inline md:text-6xl font-bold">Popular Tutors</span>
+  </h1>
+</div>
 
 <!-- courses -->
 
 
+
+<!-- component -->
+
+
+
+
+<div class="flex items-center flex flex-wrap -mx-1 lg:-mx-4  -mt-30 justify-center">
+  {% for i in profiles %}
+  <div class="max-w-xs">
+      <div class="bg-white shadow-xl rounded-lg py-3">
+          <div class="photo-wrapper p-2">
+              <img class="w-32 h-32 rounded-full mx-auto" src="https://i.pravatar.cc/150?u=a042581f4e29026704g{{i}}" alt="John Doe">
+          </div>
+          <div class="p-2">
+              <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Joh Doe</h3>
+              <div class="text-center text-gray-400 text-xs font-semibold">
+                  <p>Web Developer</p>
+              </div>
+      
+  
+              <div class="text-center my-3">
+                  <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
+              </div>
+  
+          </div>
+      </div>
+  </div>
+  {%endfor%}
+  </div>
+
+
+  <div class="flex items-center flex flex-wrap -mx-1 lg:-mx-4  -mt-30 justify-center">
+    {% for i in profiless %}
+    <div class="max-w-xs">
+        <div class="bg-white shadow-xl rounded-lg py-3">
+            <div class="photo-wrapper p-2">
+                <img class="w-32 h-32 rounded-full mx-auto" src="https://i.pravatar.cc/150?u=a042581f4e29026704g{{i}}" alt="John Doe">
+            </div>
+            <div class="p-2">
+              
+                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{name}}</h3>
+                <div class="text-center text-gray-400 text-xs font-semibold">
+                    <p>Web Developer</p>
+                </div>
+              
+    
+                <div class="text-center my-3">
+                    <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    </div>
+
+    <div class="container">
+      <div class="grid grid-cols-9 mx-auto p-2 text-blue-50">
+        <!-- left -->
+        <div class="contents">
+          <div class="bg-indigo-600 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md animate transform transition-transform hover:-translate-x-2 cursor-default">
+            <h3 class="font-semibold text-lg mb-1">Lorem ipsum</h3>
+            <p class="leading-tight text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quaerat?</p>
+          </div>
+          <div class="col-start-5 col-end-6 mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+            </div>
+            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="contents">
+          <div class="col-start-5 col-end-6 mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+            </div>
+            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+          </div>
+          <div class="bg-indigo-600 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md animate transform transition-transform hover:translate-x-2 cursor-default">
+            <h3 class="font-semibold text-lg mb-1">Lorem ipsum</h3>
+            <p class="leading-tight text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, facilis.</p>
+          </div>
+        </div>
+        <!-- left -->
+        <div class="contents">
+          <div class="bg-indigo-600 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md animate transform transition-transform hover:-translate-x-2 cursor-default">
+            <h3 class="font-semibold text-lg mb-1">Lorem ipsum</h3>
+            <p class="leading-tight text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quaerat?</p>
+          </div>
+          <div class="col-start-5 col-end-6 mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+            </div>
+            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+          </div>
+        </div>
+        <!-- left -->
+        <div class="contents">
+          <div class="bg-indigo-600 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md animate transform transition-transform hover:-translate-x-2 cursor-default">
+            <h3 class="font-semibold text-lg mb-1">Lorem ipsum</h3>
+            <p class="leading-tight text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quaerat?</p>
+          </div>
+          <div class="col-start-5 col-end-6 mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+            </div>
+            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="contents">
+          <div class="col-start-5 col-end-6 mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-800 pointer-events-none"></div>
+            </div>
+            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+          </div>
+          <div class="bg-indigo-600 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md animate transform transition-transform hover:translate-x-2 cursor-default">
+            <h3 class="font-semibold text-lg mb-1">Lorem ipsum</h3>
+            <p class="leading-tight text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, facilis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
  {%endblock%} 
 </body>
 </html>

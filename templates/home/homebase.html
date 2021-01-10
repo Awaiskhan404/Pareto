@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pareto.Dev</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"> -->
 
 </head>
 <nav>
     <!-- This example requires Tailwind CSS v2.0+ -->
-      <div class="relative bg-white z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-          <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-            <div class="flex justify-start lg:w-0 lg:flex-1">
+      <div class="fixed relative  bg-white z-50  top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+          <div class="flex  justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1 ">
               <a href="#">
                 <span class="sr-only">Workflow</span>
                 <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
@@ -467,6 +469,7 @@
         document.getElementById('solutions').classList.add('show')
       }
 </script>
+<script src="{% static 'js/extention/choices.js'%}"></script>
 {%block body%}
 {%endblock%}    
 </html>
