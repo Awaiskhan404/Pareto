@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from random_words import RandomWords
 # Create your views here.
 def index(request):
     context={}
