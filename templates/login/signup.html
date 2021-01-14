@@ -52,15 +52,15 @@
                         </div>
                         <div class="flex -mx-3">
                             <div class="w-full px-3 mb-12">
-                                <label for="" class="text-xs font-semibold px-1">Password</label>
+                                <label for="" id="pass1_id" class="text-xs font-semibold px-1">Password</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                    <input type="password" name="password" id="pass1" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" onchange="confirmpassword();" placeholder="************">
+                                    <input type="password" name="password" id="pass1" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  placeholder="************">
                                 </div>
                             </div>
 
                             <div class="w-full px-3 mb-12">
-                                <label for="" class="text-xs font-semibold  px-1">Confirm Password</label>
+                                <label for="" id="pass2_id" class="text-xs font-semibold  px-1">Confirm Password</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                                     <input type="password" id="pass2"  value="{{ source.password }}" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" onchange="confirmpassword();" placeholder="************">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="flex -mx-3">
                             <div class="w-full px-3 mb-5">
-                                <button type="submit" disabled id="register_sub" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER NOW</button>
+                                <button type="submit" onsubmit="confirmpassword();" id="register_sub" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER NOW</button>
                             </div>
                         </div>
                     </form>    
@@ -83,18 +83,20 @@
 
     <script>
         function confirmpassword(){
-            a=document.getElementById('pass1').value;
-            b=document.getElementById('pass2').value;
+           var a=document.getElementById('pass1').value;
+          var  b=document.getElementById('pass2').value;
+          console.log(a);
             if(a!=b){
                 
                 
                 document.getElementById('register_sub').disabled=true;
-                a.classList.add('text-red-600');
-               
-                b.classList.add('text-red-600');
+                document.getElementById('pass1_id').classList.add('text-red-600');
+                document.getElementById('pass1_id').innerHTML="password doesn't match"
+                document.getElementById('pass2_id').classList.add('text-red-600');
+                document.getElementById('pass2_id').innerHTML="password doesn't match"
             }
             else{
-                document.getElementById('register_sub').disabled=false;
+                // document.getElementById('register_sub').disabled=false;
             }
            
         }
