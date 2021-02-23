@@ -7,7 +7,6 @@ from django.contrib.auth import logout as user_logout
 
 # Create your views here.
 
-
 def login(request):
     return render(request, 'login/login.html') #returns main login templates from templates/login/login.html
 
